@@ -9,10 +9,10 @@ module.exports = (robot) ->
 					return
 				$ = cheerio.load(body)
 				info = $('.content').find('div.foodtruckInfo:contains("Marienberg")')	
-				name = info.html().match(/&apos;tourdaten&apos;, &apos;(.*)&apos;/)[1]
-				if !name
+				if !info.html()
 					msg.send('No foodtruck today :(')
 					return
+				name = info.html().match(/&apos;tourdaten&apos;, &apos;(.*)&apos;/)[1]
 				imgUrl = $(info).prev().children().attr('src')
 				msg.send name + ', ' + info.text()
 				msg.send imgUrl
