@@ -1,3 +1,11 @@
+# Description:
+#   Anounce Foodtruck tours
+# 
+# Commands:
+#   hubot foodtruck - Announce Foodtruck touring to Marienberg today
+
+
+
 cheerio = require('cheerio')
 
 module.exports = (robot) ->
