@@ -35,6 +35,6 @@ module.exports = (robot) ->
 
             res.send "Hotels in #{name}"
             format = 'YYYY-MM-DD'
-            url = "m.hotel.de/de/hdebot/hotels-#{locationId}/#?arrival=#{moment(fromDate).format(format)}&departure=#{moment(toDate).format(format)}"
+            url = "m.hotel.de/de/hdebot/hotels-#{locationId}/#?arrival=#{moment(fromDate).format(format)}&departure=#{moment(toDate).format(format)}&rooms=1&roomType=1"
             res.send url
 
