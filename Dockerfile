@@ -5,6 +5,8 @@ RUN apt-get -y install expect nodejs npm
 
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
+ENV TZ=Europe/Berlin
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 COPY hubot-scripts.json external-scripts.json package.json /opt/hdebot/
 COPY scripts /opt/hdebot/scripts
